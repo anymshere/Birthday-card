@@ -1,0 +1,120 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
+
+body{
+background:#0f0f1a;
+color:#fff;
+overflow-x:hidden;
+}
+
+.neon-text{
+color:#0ff;
+text-shadow:
+0 0 5px #0ff,
+0 0 10px #0ff,
+0 0 20px #00f,
+0 0 40px #00f;
+}
+
+#intro{
+position:fixed;
+width:100%;
+height:100%;
+background:black;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+z-index:10;
+}
+
+button{
+padding:10px 20px;
+margin:15px;
+border:none;
+border-radius:25px;
+background:#0ff;
+color:black;
+cursor:pointer;
+font-weight:bold;
+box-shadow:0 0 10px #0ff;
+}
+
+button:hover{
+background:#ff00ff;
+color:white;
+box-shadow:0 0 20px #ff00ff;
+}
+
+.container{
+display:none;
+padding:20px;
+text-align:center;
+}
+
+/* Cake */
+.cake{
+width:150px;
+height:120px;
+margin:auto;
+animation:rotate 5s infinite linear;
+}
+
+@keyframes rotate{
+from{transform:rotateY(0);}
+to{transform:rotateY(360deg);}
+}
+
+.layer{
+height:40px;
+border-radius:10px;
+}
+
+.top{background:#ff00ff;}
+.middle{background:#00ffff;}
+.bottom{background:#ff9900;}
+
+/* Game */
+#gameArea{
+width:300px;
+height:200px;
+border:2px solid #0ff;
+margin:20px auto;
+position:relative;
+overflow:hidden;
+}
+
+#gift{
+width:40px;
+height:40px;
+background:#ff00ff;
+position:absolute;
+cursor:pointer;
+box-shadow:0 0 10px #ff00ff;
+}
+
+.shayari-box{
+margin-top:30px;
+display:grid;
+gap:15px;
+}
+
+.card{
+background:#111;
+padding:10px;
+border-radius:10px;
+box-shadow:0 0 10px #0ff;
+}
+
+canvas{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-1;
+}
