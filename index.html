@@ -3,60 +3,67 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cyber Birthday Party 😎🔥</title>
+<title>Cyber Birthday GodMode 😈🔥</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- 💥 INTRO -->
 <div id="intro">
-    <h1 class="neon-text">⚡ CYBER PARTY LOADING ⚡</h1>
-    <button onclick="startParty()">ENTER THE MATRIX 💥</button>
+<h1 class="neon-text">⚡ CYBER PARTY LOADING ⚡</h1>
+<button onclick="startParty()">ENTER THE MATRIX 💥</button>
 </div>
 
+<div id="particles"></div>
+<canvas id="matrix"></canvas>
 <canvas id="fireworks"></canvas>
 
 <div class="container">
 
-<h1 class="neon-text">🎉 Happy Birthday Legend 🎉</h1>
+<h1 class="neon-text slide parallax-layer depth-2">
+🎉 Happy Birthday Legend 🎉
+</h1>
 
-<!-- 🎂 Cake -->
-<div class="cake-container">
-    <div class="cake">
-        <div class="layer top"></div>
-        <div class="layer middle"></div>
-        <div class="layer bottom"></div>
-    </div>
+<div class="cake slide slide-left parallax-layer depth-3">
+<div class="layer top"></div>
+<div class="layer middle"></div>
+<div class="layer bottom"></div>
 </div>
 
-<button onclick="cutCake()">🔪 Cut Cake</button>
-<p id="cakeMessage"></p>
+<button onclick="cutCake()" class="slide slide-right">
+🔪 Cut Cake
+</button>
+<p id="cakeMessage" class="slide"></p>
 
-<!-- 🎵 YouTube Song -->
-<div class="youtube-song">
-<iframe id="ytplayer"
+<iframe class="slide"
+id="ytplayer"
 width="320"
 height="180"
 src=""
 frameborder="0"
-allow="autoplay; encrypted-media"
+allow="autoplay"
 allowfullscreen>
 </iframe>
+
+<h2 class="neon-text slide slide-left">🎮 Catch The Gift</h2>
+<div id="gameArea" class="slide slide-right parallax-layer depth-1">
+<div id="gift"></div>
+</div>
+<p id="score" class="slide">Score: 0</p>
+
+<h2 class="neon-text slide slide-left">🧠 Dost Quiz</h2>
+<div class="slide slide-right">
+<p id="question">Dost ka favourite color?</p>
+<input type="text" id="answerInput">
+<button onclick="checkAnswer()">Submit</button>
+<p id="quizResult"></p>
 </div>
 
-<!-- 🎮 MINI GAME -->
-<h2 class="neon-text">🎮 Catch The Gift Game 🎁</h2>
-<div id="gameArea">
-    <div id="gift"></div>
-</div>
-<p id="score">Score: 0</p>
-
-<!-- 😎 SHAYARI -->
-<div class="shayari-box">
-<div class="card">Tere jaisi dost milna kismat ki baat hai or meri kismat hi aisi hai😎</div>
-<div class="card">Har problem bhi tu hi hai or har problem ka tu hi solution hai 😂</div>
-<div class="card">Tu sirf dost nahi legendary person hai 🔥</div>
-<div class="card">Dosti hi asli power hai nazar na lage 💪</div>
+<div class="shayari-box slide">
+<div class="card slide slide-left">Tere jaisa dost milna kismat ki baat hai 😎</div>
+<div class="card slide slide-right">Tu sirf dost nahi legend hai 🔥</div>
+<div class="card slide slide-left">Har problem ka solution tu 😂</div>
+<div class="card slide slide-right">Dosti hi asli power hai 💪</div>
+<div class="card slide slide-left">Bhai tu life ka cheat code hai 🎮</div>
 </div>
 
 </div>
