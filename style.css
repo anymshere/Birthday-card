@@ -1,23 +1,20 @@
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial, sans-serif;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
 
 body{
-background:#0f0f1a;
-color:#fff;
+background:black;
+color:white;
 overflow-x:hidden;
+text-align:center;
+perspective:1000px;
+opacity:0;
+transition:opacity 1s ease;
 }
+
+body.loaded{opacity:1;}
 
 .neon-text{
 color:#0ff;
-text-shadow:
-0 0 5px #0ff,
-0 0 10px #0ff,
-0 0 20px #00f,
-0 0 40px #00f;
+text-shadow:0 0 5px #0ff,0 0 20px #00f;
 }
 
 #intro{
@@ -32,51 +29,46 @@ align-items:center;
 z-index:10;
 }
 
-button{
-padding:10px 20px;
-margin:15px;
-border:none;
-border-radius:25px;
-background:#0ff;
-color:black;
-cursor:pointer;
-font-weight:bold;
-box-shadow:0 0 10px #0ff;
+/* Glass Cards */
+.card{
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(15px);
+border:1px solid rgba(255,255,255,0.1);
+padding:15px;
+border-radius:15px;
+box-shadow:0 0 15px rgba(0,255,255,0.3);
+transition:0.4s;
+}
+.card:hover{
+transform:scale(1.08);
+box-shadow:0 0 25px #0ff,0 0 50px #ff00ff;
 }
 
-button:hover{
-background:#ff00ff;
-color:white;
-box-shadow:0 0 20px #ff00ff;
+.container{display:none;padding:20px}
+
+/* Slide Animation */
+.slide{
+opacity:0;
+transform:translateY(60px);
+transition:all 0.8s ease;
+}
+.slide-left{transform:translateX(-80px)}
+.slide-right{transform:translateX(80px)}
+.slide.show{
+opacity:1;
+transform:translateX(0) translateY(0);
 }
 
-.container{
-display:none;
-padding:20px;
-text-align:center;
-}
+/* Parallax */
+.parallax-layer{transition:transform 0.2s ease-out}
 
 /* Cake */
-.cake{
-width:150px;
-height:120px;
-margin:auto;
-animation:rotate 5s infinite linear;
-}
-
-@keyframes rotate{
-from{transform:rotateY(0);}
-to{transform:rotateY(360deg);}
-}
-
-.layer{
-height:40px;
-border-radius:10px;
-}
-
-.top{background:#ff00ff;}
-.middle{background:#00ffff;}
-.bottom{background:#ff9900;}
+.cake{width:150px;margin:auto;animation:rotate 5s infinite linear}
+@keyframes rotate{from{transform:rotateY(0)}to{transform:rotateY(360deg)}}
+.layer{height:40px;border-radius:10px}
+.top{background:#ff00ff}
+.middle{background:#00ffff}
+.bottom{background:#ff9900}
 
 /* Game */
 #gameArea{
@@ -85,36 +77,45 @@ height:200px;
 border:2px solid #0ff;
 margin:20px auto;
 position:relative;
-overflow:hidden;
 }
-
 #gift{
 width:40px;
 height:40px;
 background:#ff00ff;
 position:absolute;
 cursor:pointer;
-box-shadow:0 0 10px #ff00ff;
 }
 
-.shayari-box{
-margin-top:30px;
-display:grid;
-gap:15px;
-}
-
-.card{
-background:#111;
-padding:10px;
-border-radius:10px;
-box-shadow:0 0 10px #0ff;
-}
-
+/* Matrix & Fireworks */
 canvas{
 position:fixed;
 top:0;
 left:0;
 width:100%;
 height:100%;
-z-index:-1;
+z-index:-2;
+}
+#fireworks{z-index:-1}
+
+/* Floating Particles */
+#particles{
+position:fixed;
+width:100%;
+height:100%;
+pointer-events:none;
+z-index:-3;
+overflow:hidden;
+}
+.particle{
+position:absolute;
+width:6px;
+height:6px;
+background:#0ff;
+border-radius:50%;
+box-shadow:0 0 10px #0ff,0 0 20px #ff00ff;
+animation:floatUp linear infinite;
+}
+@keyframes floatUp{
+from{transform:translateY(100vh);opacity:1}
+to{transform:translateY(-10vh);opacity:0}
 }
