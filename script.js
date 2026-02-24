@@ -143,7 +143,7 @@ current++;
 if(current<questions.length){
 document.getElementById("question").innerText=questions[current];
 }else{
-document.getElementById("quizResult").innerText="👑 Legend!";
+document.getElementById("quizResult").innerText="👑 you won !";
 }
 }else{
 document.getElementById("quizResult").innerText="❌ Try Again!";
@@ -154,7 +154,7 @@ document.getElementById("quizResult").innerText="❌ Try Again!";
 let secret="";
 document.addEventListener("keydown",(e)=>{
 secret+=e.key.toLowerCase();
-if(secret.includes("legend")){
+if(secret.includes("you won !")){
 alert("🎁 SECRET MODE ACTIVATED!");
 createFireworkBlast();
 document.body.style.background=
