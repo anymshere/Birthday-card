@@ -129,7 +129,7 @@ setInterval(moveGift,1000);
 moveGift();
 
 /* Quiz */
-const answers=["black","football","pizza"];
+const answers=["black","badminton","jalebi"];
 const questions=[
 "Dost ka favourite color?",
 "Dost ka favourite game?",
